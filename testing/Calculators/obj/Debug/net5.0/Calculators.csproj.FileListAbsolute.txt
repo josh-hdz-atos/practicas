@@ -1,0 +1,16 @@
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\bin\Debug\net5.0\Calculators.exe
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\bin\Debug\net5.0\Calculators.deps.json
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\bin\Debug\net5.0\Calculators.runtimeconfig.json
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\bin\Debug\net5.0\Calculators.runtimeconfig.dev.json
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\bin\Debug\net5.0\Calculators.dll
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\bin\Debug\net5.0\Calculators.pdb
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\obj\Debug\net5.0\Calculators.csproj.AssemblyReference.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\obj\Debug\net5.0\Calculators.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\obj\Debug\net5.0\Calculators.AssemblyInfoInputs.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\obj\Debug\net5.0\Calculators.AssemblyInfo.cs
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\obj\Debug\net5.0\Calculators.csproj.CoreCompileInputs.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\obj\Debug\net5.0\Calculators.dll
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\obj\Debug\net5.0\refint\Calculators.dll
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\obj\Debug\net5.0\Calculators.pdb
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\obj\Debug\net5.0\Calculators.genruntimeconfig.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\testing\Calculators\obj\Debug\net5.0\ref\Calculators.dll
