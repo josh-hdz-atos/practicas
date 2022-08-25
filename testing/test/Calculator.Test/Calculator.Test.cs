@@ -1,10 +1,12 @@
 using System;
 using Xunit;
 using Calculators;
+using Autofac.Extras.Moq;
+using Moq;
 
 namespace Calculators.Test
 {
-    public class CalculatorTest
+    public class CalculatorSimpleMathTest
     {
         [Theory]
         [InlineData(2, 3, 5)]
@@ -65,6 +67,45 @@ namespace Calculators.Test
             var Calculator = new Calculators.Calculator();
 
             Assert.Throws<DivideByZeroException>(() => { Calculator.Div(4, 0); });
+        }
+    }
+
+    public class CalculatorSeriesTest
+    {
+        [Theory]
+        [InlineData(10, 55)]
+        [InlineData(5, 5)]
+        public void Fibonaci_SimpleValues(int x, int expected)
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                mock.Mock<ICalculator>()
+                    .Setup(interf => interf.Add(It.IsAny<int>(), It.IsAny<int>()))
+                    .Returns((int x, int y) => x + y);
+
+                var series = mock.Create<Series>();
+                var actual = series.Fibonacci(x);
+
+                Assert.Equal(expected, actual);
+            }
+        }
+
+        [Theory]
+        [InlineData(10, 3628800)]
+        [InlineData(5, 120)]
+        public void Factorial_SimpleValues(int x, int expected)
+        {
+            using (var mock = AutoMock.GetLoose())
+            {
+                mock.Mock<ICalculator>()
+                    .Setup(interf => interf.Mul(It.IsAny<int>(), It.IsAny<int>()))
+                    .Returns((int x, int y) => x * y);
+
+                var series = mock.Create<Series>();
+                var actual = series.Factorial(x);
+
+                Assert.Equal(expected, actual);
+            }
         }
     }
 }
