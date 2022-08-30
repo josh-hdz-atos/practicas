@@ -1,0 +1,16 @@
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\obj\Debug\net5.0\csharp-intermediate.csproj.AssemblyReference.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\obj\Debug\net5.0\csharp-intermediate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\obj\Debug\net5.0\csharp-intermediate.AssemblyInfoInputs.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\obj\Debug\net5.0\csharp-intermediate.AssemblyInfo.cs
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\obj\Debug\net5.0\csharp-intermediate.csproj.CoreCompileInputs.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\bin\Debug\net5.0\csharp-intermediate.exe
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\bin\Debug\net5.0\csharp-intermediate.deps.json
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\bin\Debug\net5.0\csharp-intermediate.runtimeconfig.json
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\bin\Debug\net5.0\csharp-intermediate.runtimeconfig.dev.json
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\bin\Debug\net5.0\csharp-intermediate.dll
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\bin\Debug\net5.0\csharp-intermediate.pdb
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\obj\Debug\net5.0\csharp-intermediate.dll
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\obj\Debug\net5.0\refint\csharp-intermediate.dll
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\obj\Debug\net5.0\csharp-intermediate.pdb
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\obj\Debug\net5.0\csharp-intermediate.genruntimeconfig.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate\obj\Debug\net5.0\ref\csharp-intermediate.dll

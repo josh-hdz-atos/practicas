@@ -9,7 +9,7 @@ namespace csharp_intermediate
           //-------------------- 1) Ternary operator --------------------------
           int random = new Random().Next(0, 1000);
           String description = random > 500 ? "Greater than 500" : "Less than 500";
-
+          Console.WriteLine(description);
           //-------------------- 2) Exeptions and nullables --------------------------
           try{
             int? nil = null;
@@ -33,12 +33,30 @@ namespace csharp_intermediate
           Console.WriteLine($"val1:{dyno.val1}\nval2:{dyno.val2}\nval3:{dyno.val3}");
 
           //-------------------- 4) Generics and Indexers --------------------------
-          var map = new Map<derived>();
+          var map = new Map<derived>(4);
 
-          map[0] = new derived("Hola1234" ,"osi osi");
-          map["asba"];
+          try
+          {
+            map[0] = new derived("Hola1234" ,"osi osi");
+            Console.WriteLine(map[0]);
+            map[1] = new derived("Adios4321", "ono ono");
+            Console.WriteLine(map[1]);
+            map["Jordan"] = new derived("Jordan", 23);
+            Console.WriteLine(map["Jordan"]);
+            map[2] = new derived("kobe", 24);
+            Console.WriteLine(map["Jordan"]);
+          }
+          catch (ArgumentException err)
+          { 
+            Console.WriteLine(err.Message);
+            Console.WriteLine(map["kobe"]);
+
+
+          }
           //-------------------- 5) Extenssion method --------------------------
-          
+          Console.WriteLine(map.First());
+          //-------------------- 5) Regex --------------------------
+          Console.WriteLine("kobe".ValidKey());
         }
     }
 }

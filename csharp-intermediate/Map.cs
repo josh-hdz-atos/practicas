@@ -2,50 +2,55 @@ using System;
 using System.Text.RegularExpressions;
 
 namespace csharp_intermediate {
-  class Map<T> where T : AbstractMap
+  class Map<T> where T : Abstract
   {
-    private T[] array = new T[100];
+    private T[] array;
 
-    public T this[int i]
+    public Map(int size) { this.array = new T[size]; }
+
+    public dynamic this[int i]
     {
-      get { return array[i]; }
-      set { array[i] = value; }
+      get { return this.array[i].value; }
+      set { this.array[i] = value; }
     }
 
-    public T this[string key]
+    public dynamic this[string key]
     {
       get
       {
-        var i = IndexOf<T>(array, key);
-        throw new ArgumentException($"Key '{key}' not found"); 
+        int pos = -1;
+
+        for (int i = 0; i <this.array.Length; i++)
+          if (this.array[i] != null)
+            if (this.array[i].key == key)
+              pos = i;
+          else
+            break;
+
+        if (pos == -1)
+          throw new ArgumentException($"Key '{key}' not found");
+
+        return this.array[pos].value;
       }
       set
       {
-        for (int i = 0; i < 100; i++)
-        {
-          if (array[i] != null)
-          {
-            if (array[i].key == key)
-            {
-              array[i].value = value;
-            }
-          }
+        for (int i = 0; i < this.array.Length; i++)
+          if (this.array[i] != null)
+            if (this.array[i].key == key)
+              this.array[i].value = value;
           else
-          {
-            array[i] = value;
-          }
-        }
+            this.array[i] = value;
       }
     }
   }
 
   static public class MapExtenssion {
-    internal static T First<T>(this Map<T> array) where T :AbstractMap
+    internal static dynamic First<T>(this Map<T> array) where T : Abstract
     {
       return array[0];
     }
 
-    internal static bool ValidKey(this string key) 
+    internal static bool ValidKey(this string key)
     {
       Regex expression = new Regex("[A-Z][a-z]{3}[0-9]{4}"); 
       if (expression.IsMatch(key))
