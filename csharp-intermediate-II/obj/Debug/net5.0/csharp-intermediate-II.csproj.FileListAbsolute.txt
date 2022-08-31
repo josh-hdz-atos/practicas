@@ -1,0 +1,16 @@
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\obj\Debug\net5.0\csharp-intermediate-II.csproj.AssemblyReference.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\obj\Debug\net5.0\csharp-intermediate-II.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\obj\Debug\net5.0\csharp-intermediate-II.AssemblyInfoInputs.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\obj\Debug\net5.0\csharp-intermediate-II.AssemblyInfo.cs
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\obj\Debug\net5.0\csharp-intermediate-II.csproj.CoreCompileInputs.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\bin\Debug\net5.0\csharp-intermediate-II.exe
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\bin\Debug\net5.0\csharp-intermediate-II.deps.json
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\bin\Debug\net5.0\csharp-intermediate-II.runtimeconfig.json
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\bin\Debug\net5.0\csharp-intermediate-II.runtimeconfig.dev.json
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\bin\Debug\net5.0\csharp-intermediate-II.dll
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\bin\Debug\net5.0\csharp-intermediate-II.pdb
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\obj\Debug\net5.0\csharp-intermediate-II.dll
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\obj\Debug\net5.0\refint\csharp-intermediate-II.dll
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\obj\Debug\net5.0\csharp-intermediate-II.pdb
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\obj\Debug\net5.0\csharp-intermediate-II.genruntimeconfig.cache
+C:\Users\a880329\OneDrive - Atos\Documents\practicas\csharp-intermediate-II\obj\Debug\net5.0\ref\csharp-intermediate-II.dll

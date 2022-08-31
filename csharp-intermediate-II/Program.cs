@@ -34,10 +34,8 @@ namespace csharp_intermediate_II
           Stopwatch sw = new Stopwatch();
 
           sw.Start();
-          TimeIt((cls) => {
-            for (int i = 0; i < 1000000; ++i)
-              cls[i] = new Class(i, "nombre", "pass");
-          });
+          for (int i = 0; i < 1000000; ++i)
+            cls.Add(new Class(i, "nombre", "pass"));
           sw.Stop();
 
           Console.WriteLine(sw.Elapsed);
@@ -45,7 +43,7 @@ namespace csharp_intermediate_II
 
           sw.Start();
           for (int i = 0; i < 1000000; ++i)
-            stc[i] = new Struct(i, "nombre", "pass");
+            stc.Add(new Struct(i, "nombre", "pass"));
           sw.Stop();
 
           Console.WriteLine(sw.Elapsed);
@@ -53,43 +51,48 @@ namespace csharp_intermediate_II
           // ------------------------ Data structures ----------------------------
           
           int[] a = new int[] { 1, 2, 3, 4, 5 };
-          int[] b = new int[5];
 
           sw.Start();
-          b = QueueReverse(a);
+          a = QueueReverse(a);
           sw.Stop();
 
-          Console.WriteLine($"Queue reverse {sw.Elapsed}   {b[0]}");
+          Console.WriteLine($"Queue reverse {sw.Elapsed}   {a[0]}");
           sw.Reset();
-          Array.Clear(a, 0, a.Length);
+          a = new int[] { 1, 2, 3, 4, 5 };
 
           sw.Start();
-          b = ListReverse(a);
+          a = ListReverse(a);
           sw.Stop();
 
-          Console.WriteLine($"List reverse {sw.Elapsed}   {b[0]}");
+          Console.WriteLine($"List reverse {sw.Elapsed}   {a[0]}");
           sw.Reset();
-          Array.Clear(a, 0, a.Length);
+          a = new int[] { 1, 2, 3, 4, 5 };
 
           sw.Start();
-          b = DictReverse(a);
+          a = DictReverse(a);
           sw.Stop();
 
-          Console.WriteLine($"Dictionary reverse {sw.Elapsed}   {b[0]}");
+          Console.WriteLine($"Dictionary reverse {sw.Elapsed}   {a[0]}");
           sw.Reset();
-          Array.Clear(a, 0, a.Length);
 
-          // ------------------------ Stack ----------------------------
+            // ------------------------ Stack ----------------------------
+          Console.WriteLine(isPalindrome("aabbaa"));
+          Console.WriteLine(isPalindrome("aabybaa"));
+          Console.WriteLine(isPalindrome("ababaa"));
 
+          var z = Console.ReadLine();
         }
 
         static bool isPalindrome(string word)
         {
           var stk = new Stack<int>();
-          int mid = word.Length % 2 == 0 ? word.Length / 2 : word.Length / 2 + 1;
+          int mid = word.Length / 2;
           
           for (int i = 0; i < mid; i++)
-            stk.Push(word[mid]);
+            stk.Push(word[i]);
+
+          if (word.Length % 2 != 0)
+            ++mid;
 
           for (int i = mid; i < word.Length; i++)
             if (word[i] == stk.Peek())
