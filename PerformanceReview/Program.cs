@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace PerformanceReview
@@ -9,6 +10,7 @@ namespace PerformanceReview
         {
             FizzBuzz();
             RemoveLowerCase("RegExr was created by #gskinner.com, and is proudly hosted by Media Temple.\r\n\r\nedit the Expression & Text to see matches. Roll over matches or the expression for details. PCRE & JavaScript flavors of RegEx are supported. Validate your expression with Tests mode.\r\n\r\nThe side bar includes a Cheatsheet, full Reference, and Help. You can also Save & Share with the Community, and view patterns you create or favorite in My Patterns.\r\n\r\nExplore results with the Tools below. Replace & List output custom results. Details lists capture groups. Explain describes your expression in plain English.\r\n");
+            DigitRepeated()
         }
 
         static void FizzBuzz()
@@ -39,6 +41,18 @@ namespace PerformanceReview
             Console.WriteLine(result);
         }
 
+        static void DigitRepeated(int[] array)
+        {
+            var count = new Dictionary<int, int>();
 
+            for (int i = 0; i < array.Length; i++)
+                if (count.ContainsKey((array[i])))
+                    ++count[array[i]];
+                else
+                    count.Add(array[i], 1);
+
+            foreach ((int key, int value) in count)
+                Console.WriteLine($"the digit {key} repeats {value}");
+        }
     }
 }
