@@ -1,4 +1,10 @@
 *
 instructions/
-!.cs
+
+!testing/*.cs
+!csharp-basic/*.cs
+!csharp-intermediate/*.cs
+!csharp-intermediate-II/*.cs
+!sql/*.cs
+!PerformanceReview/*.cs
 !.gitignore
