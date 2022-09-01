@@ -23,9 +23,18 @@ namespace PerformanceReview
 
         static void RemoveLowerCase(ref string str)
         {
-            Regex wordStart = new Regex("")
+            Regex expression = new Regex();
 
-
+            Regex.Replace(
+                str,
+                "^[a-z]|[\n][a-z]|[ ][a-z]",
+                (Match match) =>{
+                    if (match.value[0] == ' ')
+                        return ' ' + match.value[1].ToUpper();
+                    else
+                        return match.value[0].ToUpper();
+                }
+            ) 
         }
     }
 }
