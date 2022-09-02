@@ -8,71 +8,44 @@ namespace Calculators
     internal class GraphicalInterphace
     {
         public bool PowerOn { get; set; }
-        private Calculator c;
-        private Queue<char> q
-        {
-            get { return q; }
-            set
-            {
-                if (Regex.IsMatch(@"^\s*([-+]?)(\d+)(?:\s*([-+*\/])\s*((?:\s[-+])?\d+)\s*)+$", this.input)
-                {
-                    string number = "";
+        private Queue<string> Q;
+        private Calculator C;
 
-                    foreach (char ltr in this.input)
-                    {
-                        switch(ltr)
-                        {
-                            case '+':
-                            case '-':
-                            case '*':
-                            case '/':
-                                this.q.Enqueue((Int32.Parse(number)));
-                                number = "";
-                                this.q.Enqueue(ltr);
-                                break;
-                            case '1':
-                            case '2':
-                            case '3':
-                            case '4':
-                            case '5':
-                            case '6':
-                            case '7':
-                            case '8':
-                            case '9':
-                            case '0':
-                                number += ltr;        
-                                break;
-
-                        }
-                   }
-                }
-                else throw new ArgumentException("Invalid token");
-            }
-        }
-        private string input;
-
-        GraphicalInterphace()
+        public GraphicalInterphace()
         {
             PowerOn = true;
-            input = "";
-            c = new Calculator();
-            q = new Queue<char>();
+            Q = new Queue<string>();
+            C = new Calculator();
 
-            On();
+            Main();
         }
 
-        public void On()
+        private void Main()
         {
-            while(this.PowerOn)
-            {
-                Console.WriteLine(c.Value);
-                input = Console.ReadLine();
+            string input = "";
 
-                input.Remove(' ');
-                GetTokens(input);
+            while(true)
+            {
+                if (!PowerOn)
+                {
+                    if (input == "on")
+                        this.PowerOn = true;
+                    else
+                        Console.WriteLine("");
+                }
+                else
+                {
+                    if (input == "off")
+                        this.PowerOn = false;
+                    else
+                    {
+                        Console.WriteLine(this.C.Value);
+                        input = Console.ReadLine();
+
+                        Console.WriteLine(this.C.ProcessInput(ref input, ref this.Q));
+                    }
+                }
             }
         }
-
-
     }
 }
