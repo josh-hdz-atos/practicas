@@ -14,9 +14,12 @@ namespace csharp_advanced_I
             PrintList(l, (iteam) => { return iteam % 2 == 1; });
 
             bubbleSrt(l, (x, b) => { return x > b; });
+            PrintList(l, (a) => { return true; });
+            
             bubbleSrt(l, (x, b) => { return x < b; });
+            PrintList(l, (a) => { return true; });
 
-            Console.WriteLine($"{3} is " + (30 % 3 == 0 ? "multiple of 3" : "not multiple of 3"));
+            Console.WriteLine($"{30} is " + (30 % 3 == 0 ? "multiple of 3" : "not multiple of 3"));
             
             Action<string> printer = delegate(string text) { Console.WriteLine(text); };
 
@@ -33,8 +36,9 @@ namespace csharp_advanced_I
 
             Func<List<int>, double> stat = Rms;
             Console.WriteLine($"Rms: {stat(l)}");
-        }
 
+            Console.ReadLine();
+        }
 
         public static void PrintList(List<int> lst, Predicate<int> shouldPrint)
         {
@@ -47,8 +51,8 @@ namespace csharp_advanced_I
         public static void bubbleSrt(List<int> lst, Comparer compare)
         {
             int tmp;
-            for (int i = 0; i < lst.Capacity - 1; i++)
-                for (int j = 0; j < lst.Capacity - i - 1; j++)
+            for (int i = 0; i < lst.Count - 1; i++)
+                for (int j = 0; j < lst.Count - i - 1; j++)
                     if (compare(lst[j], lst[j + 1]))
                     {
                         tmp = lst[j];
