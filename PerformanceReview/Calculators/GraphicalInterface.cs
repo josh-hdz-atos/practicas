@@ -1,5 +1,4 @@
 using System;
-using System.Text.RegularExpresion;
 using System.Collections.Generic;
 
 
@@ -7,7 +6,7 @@ namespace Calculators
 {
     internal class GraphicalInterphace
     {
-        public bool PowerOn { get; set; }
+        public bool PowerOn;
         private Queue<string> Q;
         private Calculator C;
 
@@ -24,27 +23,34 @@ namespace Calculators
         {
             string input = "";
 
-            while(true)
+            try
             {
-                if (!PowerOn)
+                while (true)
                 {
-                    if (input == "on")
-                        this.PowerOn = true;
-                    else
-                        Console.WriteLine("");
-                }
-                else
-                {
-                    if (input == "off")
-                        this.PowerOn = false;
+                    if (!PowerOn)
+                    {
+                        input = Console.ReadLine();
+                        if (input == "on")
+                            this.PowerOn = true;
+                        else
+                            Console.WriteLine("");
+                    }
                     else
                     {
                         Console.WriteLine(this.C.Value);
                         input = Console.ReadLine();
 
-                        Console.WriteLine(this.C.ProcessInput(ref input, ref this.Q));
+                        if (input == "off")
+                            this.PowerOn = false;
+                        else
+                            this.C.ProcessInput(ref input, ref this.Q);
                     }
                 }
+            }
+            catch (ArgumentException err)
+            {
+                Console.WriteLine(err.Message);
+                Main();
             }
         }
     }

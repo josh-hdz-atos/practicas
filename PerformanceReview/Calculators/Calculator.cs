@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Text.RegularExpresions;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
 namespace Calculators
@@ -11,44 +11,51 @@ namespace Calculators
 
         public Calculator() { this._value = 0; }
 
-        public float ProcessInput(ref string input, ref Queue<string> tokens)
+        public void ProcessInput(ref string input, ref Queue<string> tokens)
         {
             string currentToken;
+            char token;
 
             GetTokens(ref input, ref tokens);
+
+            if (!Regex.IsMatch(tokens.Peek(), @"\W"))
+            {
+                _value = float.Parse(tokens.Peek());
+                tokens.Dequeue();
+            }
 
             while (tokens.Count > 0)
             {
                 currentToken = tokens.Peek();
                 tokens.Dequeue();
 
-                if (Pegex.IsMatch(@"\W", currentToken))
-                    switch(currentToken)
-                    {
-                        case "+":
-                            Add(_value, tokens.Peek());
-                            break;
-                        case "-":
-                            Sub(_value, tokens.Peek());
-                            break;
-                        case "*":
-                            Mul(_value, tokens.Peek());
-                            break;
-                        case "/":
-                            Div(_value, tokens.Peek());
-                            break;
-                    }
+                token = Char.Parse(currentToken);
+                switch(token)
+                {
+                    case '-':
+                        _value = Sub(_value, float.Parse(tokens.Peek()));
+                        break;
+                    case '*':
+                        _value = Mul(_value, float.Parse(tokens.Peek()));
+                        break;
+                    case '/':
+                        _value = Div(_value, float.Parse(tokens.Peek()));
+                        break;
+                    case '+':
+                        _value = Add(_value, float.Parse(tokens.Peek()));
+                        break;
+                    default:
+                        break;
+                }
 
                 tokens.Dequeue();
             }
-
-            return _value;
         }
 
 
         private void GetTokens(ref string input, ref Queue<string> tokens)
         {
-            if (Regex.IsMatch(@"^\s*([-+]?)(\d+)(?:\s*([-+*\/])\s*((?:\s[-+])?\d+)\s*)+$", input))
+            if (Regex.IsMatch(input, @"^[-+*/]?\d+([-+*/]+[-+]?\d+)*$"))
             {
                 string number = "";
 
@@ -60,8 +67,11 @@ namespace Calculators
                         case '-':
                         case '*':
                         case '/':
-                            tokens.Enqueue((Int32.Parse(number)));
-                            number = "";
+                            if (number != "")
+                            {
+                                tokens.Enqueue(number);
+                                number = "";
+                            }
                             tokens.Enqueue(ltr.ToString());
                             break;
                         case '1':
@@ -80,15 +90,11 @@ namespace Calculators
                     }
                }
 
-                if (number != "") tokens.Enqueue(number);
+                if (number != "")
+                    tokens.Enqueue(number);
             }
             else throw new ArgumentException("Invalid input");
 
-
-        }
-
-        private float DoMath(ref Queue<string> tokens)
-        {
         }
     }
 }
